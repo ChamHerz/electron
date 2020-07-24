@@ -8,7 +8,15 @@ function App() {
       password: "123456",
       repeatPassword: "123456",
     };
-    const result = signUpApi(data);
+    signUpApi(data)
+      .then(function (response) {
+        console.log("resultado del endpoint,", response.data);
+      })
+      .catch(function (error) {
+        if (error.response) {
+          console.log("error,", error.response.data);
+        }
+      });
   };
 
   return (

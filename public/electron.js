@@ -37,6 +37,7 @@ function createWindow() {
   }
   // Open the DevTools.
   mainWindow.webContents.once("dom-ready", () => {
+    const server = require("../src/server");
     mainWindow.webContents.openDevTools();
   });
 }

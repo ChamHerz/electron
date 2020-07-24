@@ -25,7 +25,7 @@ function signUp(req, res) {
           map(err.errors, (error) => {
             arrayErrors.push(error.message);
           });
-          res.status(500).send(arrayErrors);
+          res.status(500).send({ message: "Error en la base" });
         });
     }
   }

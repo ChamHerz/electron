@@ -4,6 +4,9 @@
 # DataBase
 database.sqlite
 
+# Build
+build
+
 # Logs
 logs
 *.log

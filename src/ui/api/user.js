@@ -1,17 +1,6 @@
 import { basePath, apiVersion } from "./config";
+const axios = require("axios").default;
 
 export function signUpApi(data) {
-  const url = `${basePath}/${apiVersion}/sign-up`;
-  const params = {
-    method: "POST",
-    body: JSON.stringify(data),
-    header: {
-      "Content-Type": "application/json",
-    },
-  };
-
-  fetch(url, params).then((response) => {
-    //return response.json();
-    console.log(response);
-  });
+  return axios.post(`${basePath}/${apiVersion}/sign-up`, data);
 }
