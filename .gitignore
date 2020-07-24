@@ -1,6 +1,9 @@
 # Ide
 .idea
 
+# DataBase
+database.sqlite
+
 # Logs
 logs
 *.log
