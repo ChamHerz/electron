@@ -2,9 +2,14 @@
   "name": "electron-quick-start",
   "version": "1.0.0",
   "description": "A minimal Electron application",
-  "main": "main.js",
+  "main": "src/main.js",
+  "author": "Denis Adriel Chambi",
+  "homepage": "./",
   "scripts": {
-    "start": "electron ."
+    "server-dev-start": "nodemon src/server/index.js",
+    "react-dev-start": "cross-env BROWSER=none yarn react-scripts start",
+    "electron-dev-start": "wait-on http://localhost:3000 && electron .",
+    "dev-start": "concurrently --kill-others \"yarn server-dev-start\" \"yarn react-dev-start\" \"yarn electron-dev-start\""
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -14,9 +19,36 @@
     "tutorial",
     "demo"
   ],
-  "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^9.1.1"
+    "concurrently": "^5.2.0",
+    "cross-env": "^7.0.2",
+    "electron": "^9.1.1",
+    "electron-devtools-installer": "^3.1.1",
+    "prettier": "^2.0.5",
+    "wait-on": "^5.1.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "electron-is-dev": "^1.2.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.1",
+    "sequelize": "^6.3.3",
+    "sqlite3": "^5.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
